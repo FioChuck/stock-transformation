@@ -82,10 +82,10 @@ object Main {
 
     df2.write
       .format("bigquery")
-      .option(
-        "temporaryGcsBucket",
-        "cf-spark-temp"
-      ) // indirect mode destination gcs bucket
+      // .option(
+      //   "temporaryGcsBucket",
+      //   "cf-spark-temp"
+      // ) // indirect mode destination gcs bucket
       .option("writeMethod", "direct")
       .mode("overwrite") // overwrite or append to destination table
       .save(
