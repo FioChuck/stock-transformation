@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           distribution: "temurin"
-          java-version: "17"
+          java-version: "11"
           check-latest: true
 
       - name: build fat jar
@@ -28,7 +28,7 @@ jobs:
       - name: deploy fat jar to gcs
         uses: "google-github-actions/upload-cloud-storage@v1"
         with:
-          path: "target/scala-2.13"
+          path: "target/scala-2.12"
           destination: "cf-spark-jobs/spark-stock-transformations"
           glob: "*.jar"
           gzip: false
