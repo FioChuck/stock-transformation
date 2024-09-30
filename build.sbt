@@ -2,7 +2,7 @@ name := "spark-window-functions"
 organization := "chasf"
 version := "3.0"
 
-scalaVersion := "2.12.18"
+scalaVersion := "2.13.15"
 
 val sparkVersion = "3.5.1"
 
