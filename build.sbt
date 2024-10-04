@@ -2,9 +2,9 @@ name := "spark-window-functions"
 organization := "chasf"
 version := "3.0"
 
-scalaVersion := "2.12.18"
+scalaVersion := "2.12.20"
 
-val sparkVersion = "3.5.1"
+val sparkVersion = "3.3.4"
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
@@ -15,8 +15,8 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % sparkVersion,
   "com.google.cloud.bigdataoss" % "gcs-connector" % "hadoop3-2.2.6",
   "org.postgresql" % "postgresql" % "42.7.3",
-  "com.google.cloud.spark" %% "spark-bigquery-with-dependencies" % "0.34.0",
-  "io.openlineage" %% "openlineage-spark" % "1.18.0"
+  "com.google.cloud.spark" %% "spark-bigquery-with-dependencies" % "0.34.0"
+  // "io.openlineage" %% "openlineage-spark" % "1.18.0"
 )
 
 assemblyMergeStrategy in assembly := {

@@ -17,18 +17,18 @@ object Main {
     val spark = SparkSession.builder
       .appName("Spark Window")
       .config("spark.sql.session.timeZone", "America/New_York")
-      .config("spark.master", "local[*]") // local dev
-      .config("spark.log.level", "ERROR") // local dev
-      .config(
-        "spark.hadoop.fs.AbstractFileSystem.gs.impl",
-        "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS"
-      )
-      .config("spark.hadoop.fs.gs.project.id", "cf-data-analytics")
-      .config("spark.hadoop.google.cloud.auth.service.account.enable", "true")
-      .config(
-        "spark.hadoop.google.cloud.auth.service.account.json.keyfile",
-        "/Users/chasf/Desktop/cf-data-analytics-c0c7b23bcaf4.json"
-      )
+      // .config("spark.master", "local[*]") // local dev
+      // .config("spark.log.level", "ERROR") // local dev
+      // .config(
+      //   "spark.hadoop.fs.AbstractFileSystem.gs.impl",
+      //   "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS"
+      // )
+      // .config("spark.hadoop.fs.gs.project.id", "cf-data-analytics")
+      // .config("spark.hadoop.google.cloud.auth.service.account.enable", "true")
+      // .config(
+      //   "spark.hadoop.google.cloud.auth.service.account.json.keyfile",
+      //   "/Users/chasf/Desktop/cf-data-analytics-c0c7b23bcaf4.json"
+      // )
       .getOrCreate()
 
     spark.sparkContext.setCheckpointDir("gs://cf-spark-temp/checkpoint")
