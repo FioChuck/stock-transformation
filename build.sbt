@@ -13,9 +13,9 @@ libraryDependencies ++= Seq(
   // "com.google.cloud.bigdataoss" % "gcs-connector" % "hadoop3-2.2.6" % "provided",
   "org.apache.spark" %% "spark-mllib" % sparkVersion,
   "org.apache.spark" %% "spark-sql" % sparkVersion,
-  "com.google.cloud.bigdataoss" % "gcs-connector" % "hadoop3-2.2.6"
+  "com.google.cloud.bigdataoss" % "gcs-connector" % "hadoop3-2.2.6",
   // "org.postgresql" % "postgresql" % "42.7.3",
-  // "com.google.cloud.spark" %% "spark-bigquery-with-dependencies" % "0.41.0"
+  "com.google.cloud.spark" %% "spark-bigquery-with-dependencies" % "0.41.0"
   // "io.openlineage" %% "openlineage-spark" % "1.18.0"
 )
 
