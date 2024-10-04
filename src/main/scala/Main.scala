@@ -16,9 +16,9 @@ object Main {
 
     val spark = SparkSession.builder
       .appName("Spark Window")
-      .config("spark.sql.session.timeZone", "America/New_York")
+      // .config("spark.sql.session.timeZone", "America/New_York")
       // .config("spark.master", "local[*]") // local dev
-      // .config("spark.log.leve", "ERROR") // local dev
+      // .config("spark.log.level", "ERROR") // local dev
       // .config(
       //   "spark.hadoop.fs.AbstractFileSystem.gs.impl",
       //   "com.google.cloud.hadoop.fs.gcs.GoogleHadoopFS"
@@ -72,13 +72,15 @@ object Main {
         .format("parquet")
         .load("gs://analytics-data-lake/googl-data/*.parquet")
 
-      val df2 = df
-        .groupBy("dt")
-        .agg(max("trade_price"))
-        .orderBy("dt")
-        .withColumnRenamed("max(trade_price)", "max_price")
+    val df2 = df
+      .groupBy("dt")
+      .agg(max("trade_price"))
+      .orderBy("dt")
+      .withColumnRenamed("max(trade_price)", "max_price")
 
     df2.show()
+
+    df2.printSchema()
 
     df2.write
       .format("bigquery")
