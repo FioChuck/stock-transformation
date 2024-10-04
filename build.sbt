@@ -2,9 +2,9 @@ name := "spark-window-functions"
 organization := "chasf"
 version := "3.0"
 
-scalaVersion := "2.12.18"
+scalaVersion := "2.12.14"
 
-val sparkVersion = "3.3.2"
+val sparkVersion = "3.1.3"
 
 libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-core" % sparkVersion % "provided",
