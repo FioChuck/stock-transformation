@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: setup java 17 deployment
+      - name: setup java 11 deployment
         uses: actions/setup-java@v2
         with:
           distribution: "temurin"
